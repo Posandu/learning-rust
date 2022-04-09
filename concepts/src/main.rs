@@ -1,4 +1,30 @@
+use rand::Rng;
 use std::io;
+
+fn fib(n: u64) -> u64 {
+    if n == 0 {
+        return 0;
+    } else if n == 1 {
+        return 1;
+    } else {
+        return fib(n - 1) + fib(n - 2);
+    }
+}
+
+fn rickroll() {
+    let lyrics = [
+        "Never gonna give you up",
+        "Never gonna let you down",
+        "Never gonna run around and desert you",
+        "Never gonna make you cry",
+        "Never gonna say goodbye",
+        "Never gonna tell a lie and hurt you",
+    ];
+
+    for line in lyrics.iter() {
+        println!("{}", line);
+    }
+}
 
 fn main() {
     // Mutable variables
@@ -66,4 +92,52 @@ fn main() {
 
     let arr_index: usize = arr_index.trim().parse().expect("Please type a number");
     println!("The item at index {} is: {}", arr_index, arr[arr_index]);
+
+    // Functions
+    let rand_n = rand::thread_rng().gen_range(1..100);
+
+    println!("Fibonacci of {}: {}", rand_n, fib(5));
+    rickroll();
+
+    // Comments
+    // Like this
+    // Ok time over
+
+    // Loops
+    let mut iterate = 0;
+
+    loop {
+        iterate += 1;
+
+        if iterate == 10 {
+            break;
+        }
+
+        if iterate % 2 == 0 {
+            continue;
+        }
+
+        println!("Iteration: {}", iterate);
+    }
+
+    let a = [10, 20, 30, 40, 50];
+
+    let mut index = 0;
+    while index < 5 {
+        println!("The value is: {}", a[index]);
+        index += 1;
+    }
+
+    for element in a {
+        println!("The value is: {}", element);
+    }
+
+    // Umm python style
+    for i in 0..5 {
+        println!("The value is: {}", i);
+    }
+
+    for i in (0..5).rev() {
+        println!("The value is: {}", i);
+    }
 }
