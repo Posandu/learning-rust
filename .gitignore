@@ -1,2 +1,6 @@
 .*
 !.gitignore
+*.pdb
+debug
+.fingerprint
+.cargo-lock
